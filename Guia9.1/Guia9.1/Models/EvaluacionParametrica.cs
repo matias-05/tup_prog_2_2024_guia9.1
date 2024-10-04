@@ -22,17 +22,27 @@ namespace Guia9._1.Models
         }
         public override TipoAprobacion Evaluar()
         {
-            if (ValorMedido >= 30)
+            double v70 = ValorMinimo * (1 - ValorTolerado / 100);
+            double v130 = ValorMaximo * (1 + ValorTolerado / 100);
+            if (ValorMedido < v70)
             {
-                return TipoAprobacion.Aprobado;
+                return TipoAprobacion.NoAprobado;
             }
-            else if (ValorMedido >= 21)
+            else if (ValorMedido < ValorMinimo)
             {
                 return TipoAprobacion.Parcial;
             }
-            else 
+            else if(ValorMedido <= ValorMaximo)
             {
-                return TipoAprobacion.NoAprobado;
+                return TipoAprobacion.Aprobado;
+            } 
+            else if (ValorMedido < v130)
+            {
+                return TipoAprobacion.Parcial;
+            }
+            else
+            {
+                return TipoAprobacion.Aprobado;
             }
         }
     }
