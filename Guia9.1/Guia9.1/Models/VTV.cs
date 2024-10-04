@@ -35,7 +35,32 @@ namespace Guia9._1.Models
                 }
             }
         }
-        public TipoAprobacion Aprobacion { get; private set; }
+        public TipoAprobacion Aprobacion 
+        { 
+            get
+            {
+                TipoAprobacion r = TipoAprobacion.Parcial;
+                for (int i = 0; i < CantidadEvaluaciones; i++)
+                {
+                    if (evaluaciones[i].Evaluar() == TipoAprobacion.Aprobado)
+                    {
+                        r = TipoAprobacion.Aprobado;
+                        FechaVencimiento = Fecha.AddYears(1);
+                    }
+                    else if (evaluaciones[i].Evaluar() == TipoAprobacion.Parcial)
+                    {
+                        r = TipoAprobacion.Parcial;
+                        FechaVencimiento = Fecha.AddDays(20);
+                    }
+                    else
+                    {
+                        r = TipoAprobacion.NoAprobado;
+                    }
+                }
+                return r;
+            }
+               
+        }
         public VTV(string patente, Propietario propietario)
         {
             Patente = patente;
@@ -52,9 +77,21 @@ namespace Guia9._1.Models
                 r[i] = evaluaciones[i].ToString();
             }
 
-            r[CantidadEvaluaciones + 2] = $"Vencimiento {FechaVencimiento}";
+            r[CantidadEvaluaciones + 2] = $"Resultado: {Aprobacion} - Vencimiento: {FechaVencimiento}";
 
             return r;
+        }
+        public override string ToString()
+        {
+            return $"{Patente} | {Aprobacion,15} | {Propietario.Dni,15} | {Fecha} | {FechaVencimiento} ";
+        }
+        public int CompareTo(object obj)
+        {
+            if (obj is Propietario && obj != null)
+            {
+                return Propietario.Dni.CompareTo(((Propietario)obj).Dni);
+            }
+            return 0;
         }
     }
 }
