@@ -3,17 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Permissions;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Guia9._1.Models
 {
     internal class VTV : IComparable
     {
+        //Evaluacion a = new EvaluacionParametrica("Prueba de frenos delanteros", "Porcentaje de diferencia de frenado entre ejes", 0, 30, "Porcentaje", double tolerado);
         public Propietario Propietario { get; private set; }
         List<Evaluacion> evaluaciones = new List<Evaluacion>();
         public string Patente { get; private set; }
         public DateTime Fecha { get; private set; }
-        public DateTime FechaVencimiento { get; private set; }
+        public DateTime FechaVencimiento 
+        {
+            get
+            {
+                if (Aprobacion == TipoAprobacion.Aprobado)
+                {
+                    return Fecha.AddYears(1);
+                }
+                else if (Aprobacion == TipoAprobacion.Parcial)
+                {
+                    return Fecha.AddDays(20);
+                }
+                else
+                {
+                    return Fecha;
+                }
+            }
+        }
         public int CantidadEvaluaciones
         {
             get
@@ -45,12 +64,10 @@ namespace Guia9._1.Models
                     if (evaluaciones[i].Evaluar() == TipoAprobacion.Aprobado)
                     {
                         r = TipoAprobacion.Aprobado;
-                        FechaVencimiento = Fecha.AddYears(1);
                     }
                     else if (evaluaciones[i].Evaluar() == TipoAprobacion.Parcial)
                     {
                         r = TipoAprobacion.Parcial;
-                        FechaVencimiento = Fecha.AddDays(20);
                     }
                     else
                     {
@@ -61,10 +78,15 @@ namespace Guia9._1.Models
             }
                
         }
-        public VTV(string patente, Propietario propietario)
+        public VTV(string patente, Propietario propietario, DateTime fecha)
         {
+            if (Regex.Match(patente, @" ^[A-Z]{2} [0-9]{3} [A-Z]{2}$ | ^ [A-Z]{3} [0-9]{3}$ ", RegexOptions.IgnoreCase).Success == false)
+            {
+                throw new PatenteNoValidaException($"Patente: {patente} no valida");
+            }
             Patente = patente;
             Propietario = propietario;
+            Fecha = fecha;
         }
         public string[] EmitirComprobante()
         {
