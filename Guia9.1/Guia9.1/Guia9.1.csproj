@@ -69,6 +69,7 @@
     <Compile Include="Models\Evaluacion.cs" />
     <Compile Include="Models\EvaluacionParametrica.cs" />
     <Compile Include="Models\EvaluacionSimple.cs" />
+    <Compile Include="Models\FiscalizadorVTV.cs" />
     <Compile Include="Models\PatenteNoValidaException.cs" />
     <Compile Include="Models\Propietario.cs" />
     <Compile Include="Models\TipoAprobacion.cs" />

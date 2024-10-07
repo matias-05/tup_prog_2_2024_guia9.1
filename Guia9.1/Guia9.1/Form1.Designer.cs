@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.gbRegistroVTV = new System.Windows.Forms.GroupBox();
-            this.gbDatos = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbDni = new System.Windows.Forms.TextBox();
-            this.tbNombre = new System.Windows.Forms.TextBox();
-            this.tbCorreo = new System.Windows.Forms.TextBox();
+            this.btIniciar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btBuscar = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btBuscar = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btIniciar = new System.Windows.Forms.Button();
+            this.gbDatos = new System.Windows.Forms.GroupBox();
+            this.tbCorreo = new System.Windows.Forms.TextBox();
+            this.tbNombre = new System.Windows.Forms.TextBox();
+            this.tbDni = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btVer = new System.Windows.Forms.Button();
             this.gbRegistroVTV.SuspendLayout();
-            this.gbDatos.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.gbDatos.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbRegistroVTV
@@ -61,71 +61,15 @@
             this.gbRegistroVTV.TabStop = false;
             this.gbRegistroVTV.Text = "Registro de VTV";
             // 
-            // gbDatos
+            // btIniciar
             // 
-            this.gbDatos.Controls.Add(this.tbCorreo);
-            this.gbDatos.Controls.Add(this.tbNombre);
-            this.gbDatos.Controls.Add(this.tbDni);
-            this.gbDatos.Controls.Add(this.label3);
-            this.gbDatos.Controls.Add(this.label2);
-            this.gbDatos.Controls.Add(this.label1);
-            this.gbDatos.Location = new System.Drawing.Point(6, 19);
-            this.gbDatos.Name = "gbDatos";
-            this.gbDatos.Size = new System.Drawing.Size(346, 107);
-            this.gbDatos.TabIndex = 0;
-            this.gbDatos.TabStop = false;
-            this.gbDatos.Text = "Datos del propietario";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(113, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Dni";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Apellidos y Nombres";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(92, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Correo";
-            // 
-            // tbDni
-            // 
-            this.tbDni.Location = new System.Drawing.Point(146, 19);
-            this.tbDni.Name = "tbDni";
-            this.tbDni.Size = new System.Drawing.Size(100, 20);
-            this.tbDni.TabIndex = 3;
-            // 
-            // tbNombre
-            // 
-            this.tbNombre.Location = new System.Drawing.Point(146, 47);
-            this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(189, 20);
-            this.tbNombre.TabIndex = 4;
-            // 
-            // tbCorreo
-            // 
-            this.tbCorreo.Location = new System.Drawing.Point(146, 77);
-            this.tbCorreo.Name = "tbCorreo";
-            this.tbCorreo.Size = new System.Drawing.Size(189, 20);
-            this.tbCorreo.TabIndex = 5;
+            this.btIniciar.Location = new System.Drawing.Point(122, 215);
+            this.btIniciar.Name = "btIniciar";
+            this.btIniciar.Size = new System.Drawing.Size(117, 42);
+            this.btIniciar.TabIndex = 2;
+            this.btIniciar.Text = "Iniciar carga VTV";
+            this.btIniciar.UseVisualStyleBackColor = true;
+            this.btIniciar.Click += new System.EventHandler(this.btIniciar_Click);
             // 
             // groupBox1
             // 
@@ -140,6 +84,22 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del propietario";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(146, 48);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(194, 20);
+            this.dateTimePicker1.TabIndex = 7;
+            // 
+            // btBuscar
+            // 
+            this.btBuscar.Location = new System.Drawing.Point(261, 17);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btBuscar.TabIndex = 6;
+            this.btBuscar.Text = "Buscar";
+            this.btBuscar.UseVisualStyleBackColor = true;
             // 
             // textBox3
             // 
@@ -168,30 +128,71 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Patente";
             // 
-            // btBuscar
+            // gbDatos
             // 
-            this.btBuscar.Location = new System.Drawing.Point(261, 17);
-            this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btBuscar.TabIndex = 6;
-            this.btBuscar.Text = "Buscar";
-            this.btBuscar.UseVisualStyleBackColor = true;
+            this.gbDatos.Controls.Add(this.tbCorreo);
+            this.gbDatos.Controls.Add(this.tbNombre);
+            this.gbDatos.Controls.Add(this.tbDni);
+            this.gbDatos.Controls.Add(this.label3);
+            this.gbDatos.Controls.Add(this.label2);
+            this.gbDatos.Controls.Add(this.label1);
+            this.gbDatos.Location = new System.Drawing.Point(6, 19);
+            this.gbDatos.Name = "gbDatos";
+            this.gbDatos.Size = new System.Drawing.Size(346, 107);
+            this.gbDatos.TabIndex = 0;
+            this.gbDatos.TabStop = false;
+            this.gbDatos.Text = "Datos del propietario";
             // 
-            // dateTimePicker1
+            // tbCorreo
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(146, 48);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(194, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.tbCorreo.Location = new System.Drawing.Point(146, 77);
+            this.tbCorreo.Name = "tbCorreo";
+            this.tbCorreo.Size = new System.Drawing.Size(189, 20);
+            this.tbCorreo.TabIndex = 5;
             // 
-            // btIniciar
+            // tbNombre
             // 
-            this.btIniciar.Location = new System.Drawing.Point(122, 215);
-            this.btIniciar.Name = "btIniciar";
-            this.btIniciar.Size = new System.Drawing.Size(117, 42);
-            this.btIniciar.TabIndex = 2;
-            this.btIniciar.Text = "Iniciar carga VTV";
-            this.btIniciar.UseVisualStyleBackColor = true;
+            this.tbNombre.Location = new System.Drawing.Point(146, 47);
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(189, 20);
+            this.tbNombre.TabIndex = 4;
+            // 
+            // tbDni
+            // 
+            this.tbDni.Location = new System.Drawing.Point(146, 19);
+            this.tbDni.Name = "tbDni";
+            this.tbDni.Size = new System.Drawing.Size(100, 20);
+            this.tbDni.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(92, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Correo";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Apellidos y Nombres";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(113, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Dni";
             // 
             // btVer
             // 
@@ -212,10 +213,10 @@
             this.Name = "Form1";
             this.Text = "Form Principal";
             this.gbRegistroVTV.ResumeLayout(false);
-            this.gbDatos.ResumeLayout(false);
-            this.gbDatos.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gbDatos.ResumeLayout(false);
+            this.gbDatos.PerformLayout();
             this.ResumeLayout(false);
 
         }

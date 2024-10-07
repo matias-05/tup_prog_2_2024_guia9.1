@@ -16,5 +16,10 @@ namespace Guia9._1
         {
             InitializeComponent();
         }
+
+        private void btIniciar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

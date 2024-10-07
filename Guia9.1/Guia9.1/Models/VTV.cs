@@ -10,12 +10,13 @@ namespace Guia9._1.Models
 {
     internal class VTV : IComparable
     {
-        //Evaluacion a = new EvaluacionParametrica("Prueba de frenos delanteros", "Porcentaje de diferencia de frenado entre ejes", 0, 30, "Porcentaje", double tolerado);
+
+
         public Propietario Propietario { get; private set; }
         List<Evaluacion> evaluaciones = new List<Evaluacion>();
         public string Patente { get; private set; }
         public DateTime Fecha { get; private set; }
-        public DateTime FechaVencimiento 
+        public DateTime FechaVencimiento
         {
             get
             {
@@ -54,8 +55,8 @@ namespace Guia9._1.Models
                 }
             }
         }
-        public TipoAprobacion Aprobacion 
-        { 
+        public TipoAprobacion Aprobacion
+        {
             get
             {
                 TipoAprobacion r = TipoAprobacion.Parcial;
@@ -76,17 +77,26 @@ namespace Guia9._1.Models
                 }
                 return r;
             }
-               
+
         }
-        public VTV(string patente, Propietario propietario, DateTime fecha)
+        public VTV(string patente, Propietario propietario)
         {
             if (Regex.Match(patente, @" ^[A-Z]{2} [0-9]{3} [A-Z]{2}$ | ^ [A-Z]{3} [0-9]{3}$ ", RegexOptions.IgnoreCase).Success == false)
             {
                 throw new PatenteNoValidaException($"Patente: {patente} no valida");
             }
+
             Patente = patente;
             Propietario = propietario;
-            Fecha = fecha;
+            
+
+            evaluaciones.AddRange(new Evaluacion[] { 
+                new EvaluacionParametrica("Prueba de frenos delanteros", "Porcentaje de diferencia de frenado entre ejes", 0, 30, "Porcentaje", 30), 
+                new EvaluacionParametrica("Prueba de frenos traseros", "Porcentaje de diferencia de frenado entre ejes", 0, 30, "Porcentaje", 30), 
+                new EvaluacionParametrica("Alineación", "Convergencia en grados", 0, 0.5, "Grado", 30),
+                new EvaluacionParametrica("Luces de corto alcance", "Intensidad lumínica", 10000, 15000, "Candela", 30),
+                new EvaluacionParametrica("Luces de largo alcance", "Intensidad lumínica", 30000, 40000, "Candela", 30),
+                new EvaluacionSimple("Bocina", "Funcionamiento correcto")});
         }
         public string[] EmitirComprobante()
         {
