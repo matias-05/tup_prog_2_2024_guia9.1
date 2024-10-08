@@ -79,24 +79,26 @@ namespace Guia9._1.Models
             }
 
         }
-        public VTV(string patente, Propietario propietario)
+        public VTV(string patente, Propietario propietario, DateTime fecha)
         {
-            if (Regex.Match(patente, @" ^[A-Z]{2} [0-9]{3} [A-Z]{2}$ | ^ [A-Z]{3} [0-9]{3}$ ", RegexOptions.IgnoreCase).Success == false)
+            if (Regex.Match(patente, @" ^[A-Z]{2} [0-9]{3} [A-Z]{2}$ || ^ [A-Z]{3} [0-9]{3}$ ", RegexOptions.IgnoreCase).Success == false)
             {
                 throw new PatenteNoValidaException($"Patente: {patente} no valida");
             }
 
             Patente = patente;
             Propietario = propietario;
-            
+            Fecha = fecha;
 
-            evaluaciones.AddRange(new Evaluacion[] { 
+            evaluaciones.AddRange(new Evaluacion[] 
+            { 
                 new EvaluacionParametrica("Prueba de frenos delanteros", "Porcentaje de diferencia de frenado entre ejes", 0, 30, "Porcentaje", 30), 
                 new EvaluacionParametrica("Prueba de frenos traseros", "Porcentaje de diferencia de frenado entre ejes", 0, 30, "Porcentaje", 30), 
                 new EvaluacionParametrica("Alineación", "Convergencia en grados", 0, 0.5, "Grado", 30),
                 new EvaluacionParametrica("Luces de corto alcance", "Intensidad lumínica", 10000, 15000, "Candela", 30),
                 new EvaluacionParametrica("Luces de largo alcance", "Intensidad lumínica", 30000, 40000, "Candela", 30),
-                new EvaluacionSimple("Bocina", "Funcionamiento correcto")});
+                new EvaluacionSimple("Bocina", "Funcionamiento correcto")
+            });
         }
         public string[] EmitirComprobante()
         {

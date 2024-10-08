@@ -27,9 +27,9 @@ namespace Guia9._1.Models
                 }
             }
         }
-        public VTV AgregarVTV(string patente, Propietario propietario)
+        public VTV AgregarVTV(string patente, Propietario propietario, DateTime fecha)
         {
-            VTV n = new VTV(patente, propietario);
+            VTV n = new VTV(patente, propietario, fecha);
             vtvs.Add(n);
             return n;
         }

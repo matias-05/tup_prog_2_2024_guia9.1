@@ -31,9 +31,9 @@
             this.gbRegistroVTV = new System.Windows.Forms.GroupBox();
             this.btIniciar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtFechaHoy = new System.Windows.Forms.DateTimePicker();
             this.btBuscar = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbPatente = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.gbDatos = new System.Windows.Forms.GroupBox();
@@ -73,9 +73,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtFechaHoy);
             this.groupBox1.Controls.Add(this.btBuscar);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.tbPatente);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(6, 132);
@@ -83,14 +83,14 @@
             this.groupBox1.Size = new System.Drawing.Size(346, 77);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos del propietario";
+            this.groupBox1.Text = "Datos";
             // 
-            // dateTimePicker1
+            // dtFechaHoy
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(146, 48);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(194, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dtFechaHoy.Location = new System.Drawing.Point(146, 48);
+            this.dtFechaHoy.Name = "dtFechaHoy";
+            this.dtFechaHoy.Size = new System.Drawing.Size(194, 20);
+            this.dtFechaHoy.TabIndex = 7;
             // 
             // btBuscar
             // 
@@ -101,12 +101,12 @@
             this.btBuscar.Text = "Buscar";
             this.btBuscar.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // tbPatente
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(109, 20);
-            this.textBox3.TabIndex = 3;
+            this.tbPatente.Location = new System.Drawing.Point(146, 19);
+            this.tbPatente.Name = "tbPatente";
+            this.tbPatente.Size = new System.Drawing.Size(109, 20);
+            this.tbPatente.TabIndex = 3;
             // 
             // label5
             // 
@@ -233,9 +233,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btIniciar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtFechaHoy;
         private System.Windows.Forms.Button btBuscar;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbPatente;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btVer;

@@ -36,11 +36,12 @@ namespace Guia9._1.Models
             }
             set 
             {
-                if (Regex.Match(email, "@^[w]{3} [w]{*} [w]{3} [@]{1} [w]{3} [w]{*} [w]{3} [.com]{4} [.]{1} [w]{2} $").Success == false)
+                email = value;
+                Match a = Regex.Match(email, @"^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$");
+                if (a.Success == false)
                 {
                     throw new EmailNoValidoException($"Email: {Email} no valido");
                 }
-                email = value;
             }
         }
         public Propietario(int dni, string nombre, string email) 
